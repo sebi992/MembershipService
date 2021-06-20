@@ -22,7 +22,8 @@ namespace MembershipService
                 factory = new PremiumMembershipFactory(name);
             }
             var newMember = factory.GetMembership();
-            Console.WriteLine($"Can {newMember.Name} Access pool:{newMember.CanAccessPool()}");
+            newMember.CanAccessPool();
+            Console.Read();
         }
     }
 }
