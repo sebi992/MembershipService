@@ -8,8 +8,10 @@ namespace MembershipService
         static void Main(string[] args)
         {
             MembershipFactory factory = null;
+            Console.WriteLine("Enter membership type:");
             var membershipType = Console.ReadLine();
 
+            Console.WriteLine("Enter the name:");
             var name = Console.ReadLine();
             if (membershipType == "Basic")
             {
@@ -20,7 +22,7 @@ namespace MembershipService
                 factory = new PremiumMembershipFactory(name);
             }
             var newMember = factory.GetMembership();
-            newMember.CanAccessPool();
+            Console.WriteLine($"Can {newMember.Name} Access pool:{newMember.CanAccessPool()}");
         }
     }
 }
