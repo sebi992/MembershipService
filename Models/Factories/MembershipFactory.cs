@@ -7,6 +7,6 @@ namespace Models.Factories
 {
     public abstract class MembershipFactory
     {
-        public abstract Membership GetMembership(); 
+        public abstract Membership GetMembership();
     }
 }

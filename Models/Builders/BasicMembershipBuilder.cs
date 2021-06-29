@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Models.Builders
 {
-    public class BasicMembershipBuilder
+    public class BasicMembershipBuilder : IMembershipBuilder
     {
         private BasicMembership _membership = null;
 
-        public void CreateMembership()
+        public void CreateMembership(int premiumPoints = 0)
         {
             _membership = new BasicMembership();
         }
@@ -19,7 +19,7 @@ namespace Models.Builders
             _membership.Name = name;
         }
 
-        public BasicMembership GetBasicMembership()
+        public Membership GetMembership()
         {
             return _membership;
         }

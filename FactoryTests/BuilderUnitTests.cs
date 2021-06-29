@@ -13,12 +13,12 @@ namespace UnitTests
         public void Should_Build_BasicMembership_From_BasicMembershipBuilder()
         {
             //arrange
-            var name = "Aurel";
+            var name = "Sebi";
             var basicMembershipBuilder = new BasicMembershipBuilder();
             basicMembershipBuilder.CreateMembership();
             basicMembershipBuilder.SetName(name);
             //act
-            var model = basicMembershipBuilder.GetBasicMembership();
+            var model = basicMembershipBuilder.GetMembership();
             //assert
             Assert.False(model.CanAccessPool());
             Assert.Equal(name, model.Name);
@@ -28,12 +28,12 @@ namespace UnitTests
         public void Should_Build_PremiumMemberShip_From_PremiumMembershipBuilder()
         {
             //arrange
-            var name = "Aurel";
+            var name = "Sebi";
             var premiumMembershipBuilder = new PremiumMembershipBuilder();
             premiumMembershipBuilder.CreateMembership(200);
             premiumMembershipBuilder.SetName(name);
             //act
-            var model = premiumMembershipBuilder.GetPremiumMembership();
+            var model = premiumMembershipBuilder.GetMembership();
             //assert
             Assert.True(model.CanAccessPool());
             Assert.Equal(name, model.Name);

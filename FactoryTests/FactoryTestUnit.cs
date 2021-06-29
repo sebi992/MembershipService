@@ -12,7 +12,7 @@ namespace UnitTests
         public void Should_Create_BasicMembership_From_BasicMembershipFactory()
         {
             //arrange
-            var name = "Aurel";
+            var name = "Sebi";
             var basicMembershipFactory = new BasicMembershipFactory(name);
             //act
             var model = basicMembershipFactory.GetMembership();
@@ -25,8 +25,9 @@ namespace UnitTests
         public void Should_Create_PremiumMembership_From_PremiumMembershipFactory_With_PremiumPoints()
         {
             //arrange
-            var name = "Aurel";
-            var premiumMembershipFactory = new PremiumMembershipFactory(name);
+            var name = "Sebi";
+            var premiumPoints = 100;
+            var premiumMembershipFactory = new PremiumMembershipFactory(name, premiumPoints);
             //act
             var model = premiumMembershipFactory.GetMembership();
             //assert

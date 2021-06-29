@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Models.Builders
 {
-    public class PremiumMembershipBuilder
+    public class PremiumMembershipBuilder : IMembershipBuilder
     {
         private PremiumMembership _membership = null;
 
@@ -19,7 +19,7 @@ namespace Models.Builders
             _membership.Name = name;
         }
 
-        public PremiumMembership GetPremiumMembership()
+        public Membership GetMembership()
         {
             return _membership;
         }

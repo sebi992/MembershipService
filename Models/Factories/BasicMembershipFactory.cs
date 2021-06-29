@@ -16,10 +16,9 @@ namespace Models.Factories
 
         public override Membership GetMembership()
         {
-            var builder = new BasicMembershipBuilder();
-            builder.CreateMembership();
-            builder.SetName(_name);
-            return builder.GetBasicMembership();
+            var membershipCreator = new MembershipCreator(new BasicMembershipBuilder());
+            membershipCreator.CreateMembership(_name);
+            return membershipCreator.GetMembership();
         }
     }
 }

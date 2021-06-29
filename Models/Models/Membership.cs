@@ -11,16 +11,17 @@ namespace Models.Models
         public int Age { get; set; }
         public AccessLevel AccessLevel { get; }
         public int PremiumPoints { get; set; }
-        public Membership(AccessLevel accessLevel) { 
+        public Membership(AccessLevel accessLevel)
+        {
             this.AccessLevel = accessLevel;
-            
+
         }
 
         public bool CanAccessPool()
         {
             if (AccessLevel == AccessLevel.Premium)
             {
-                Console.WriteLine($"Member {Name} with access level {AccessLevel} can go to pool");
+                Console.WriteLine($"Member {Name} with access level {AccessLevel} can go to pool. Premium points: {PremiumPoints}");
                 return true;
             }
             else
